@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* ── BASE ── */
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif;
+    background-color: #111318 !important;
+    color: #d1d5db;
+}
+.stApp { background: #111318; }
+.block-container {
+    padding: 2rem 2.5rem !important;
+    max-width: 1200px;
+}
+
+/* ── SIDEBAR ── */
+[data-testid="stSidebar"] {
+    background: #16191f !important;
+    border-right: 1px solid #2a2d35;
+}
+[data-testid="stSidebar"] * { color: #d1d5db !important; }
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    color: #9ca3af !important;
+    font-size: 0.7rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* ── INPUTS ── */
+input, [data-baseweb="input"] input {
+    background: #1e2128 !important;
+    color: #e5e7eb !important;
+    border: 1px solid #2a2d35 !important;
+    border-radius: 6px !important;
+}
+input:focus {
+    border-color: #6b7280 !important;
+    box-shadow: none !important;
+}
+
+/* ── BOTÕES ── */
+div.stButton > button {
+    background: #1e2128 !important;
+    border: 1px solid #2a2d35 !important;
+    color: #e5e7eb !important;
+    font-weight: 500 !important;
+    font-size: 0.8rem !important;
+    padding: 0.55rem 1.2rem !important;
+    border-radius: 6px !important;
+    transition: border-color 0.15s ease, color 0.15s ease !important;
+    width: 100% !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+}
+div.stButton > button:hover {
+    border-color: #9ca3af !important;
+    color: #fff !important;
+    background: #1e2128 !important;
+    box-shadow: none !important;
+}
+
+/* ── HEADER ── */
+.fp-header {
+    padding: 0.5rem 0 1.8rem 0;
+    border-bottom: 1px solid #2a2d35;
+    margin-bottom: 2rem;
+}
+.fp-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #f3f4f6;
+    letter-spacing: -0.01em;
+}
+.fp-subtitle {
+    font-size: 0.78rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+}
+
+/* ── CARDS ── */
+.metric-card {
+    background: #16191f;
+    border: 1px solid #2a2d35;
+    border-radius: 8px;
+    padding: 1.1rem 1.4rem;
+    margin: 0.3rem 0;
+}
+.metric-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6b7280;
+    margin-bottom: 0.4rem;
+}
+.metric-value {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #f3f4f6;
+    line-height: 1;
+}
+.metric-delta-pos { font-size: 0.78rem; color: #34d399; margin-top: 0.3rem; }
+.metric-delta-neg { font-size: 0.78rem; color: #f87171; margin-top: 0.3rem; }
+
+/* ── PERF CARDS ── */
+.perf-card {
+    background: #16191f;
+    border: 1px solid #2a2d35;
+    border-radius: 8px;
+    padding: 1.1rem 1.4rem;
+}
+.perf-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6b7280;
+    margin-bottom: 0.4rem;
+}
+.perf-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #f3f4f6;
+}
+
+/* ── SECTION TITLE ── */
+.section-title {
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #6b7280;
+    padding: 1.5rem 0 0.8rem 0;
+    border-top: 1px solid #2a2d35;
+    margin-top: 1rem;
+}
+
+/* ── DEV CREDIT ── */
+.dev-credit {
+    font-size: 0.78rem;
+    color: #4b5563;
+    text-align: center;
+    padding: 0.8rem 0 0.2rem 0;
+}
+.dev-credit a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-weight: 500;
+    animation: blink 1s infinite;
+}
+.dev-credit a:hover { color: #f3f4f6; }
+@keyframes blink {
+    0%, 40%, 100% { opacity: 1; }
+    50%            { opacity: 0.15; }
+}
+
+/* ── HIDE STREAMLIT CHROME ── */
+#MainMenu, footer, header { visibility: hidden; }
