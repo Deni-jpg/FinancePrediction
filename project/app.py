@@ -24,11 +24,12 @@ st.set_page_config(
 # -----------------------------------------------------------------------
 # CSS
 # -----------------------------------------------------------------------
-def load_css(path: str):
-    with open(path) as f:
+def load_css():
+    css_path = os.path.join(os.path.dirname(__file__), "style.css")
+    with open(css_path) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-load_css("style.css")
+load_css()
 
 # -----------------------------------------------------------------------
 # IDIOMAS
@@ -100,7 +101,7 @@ st.markdown(f"""
 # -----------------------------------------------------------------------
 with st.sidebar:
     st.markdown(f"### {L['sb_title']}")
-    cod           = st.text_input(L['ticker'], value="").upper()
+    cod           = st.text_input(L['ticker'], value="NVDA").upper()
     begin         = st.text_input(L['start'],  value="2020-01-01")
     end_date_str  = st.text_input(L['end'],    value="2026-01-01")
     dias_previsao = st.number_input(L['days'], min_value=30, max_value=730, value=365)
@@ -110,9 +111,10 @@ with st.sidebar:
     st.button(L['btn_lang'], on_click=toggle_lang)
 
     # ── CRÉDITO NO RODAPÉ DA SIDEBAR ──────────────────────────────
+    st.markdown("---")
     st.markdown(f"""
     <div class="dev-credit">
-        {L['dev_credit']} <a href="https://linktr.ee/deni.jpg" target="_blank">Daniel Coelho</a>
+        {L['dev_credit']} <a href="https://linktr.ee/danielcoelho" target="_blank">Daniel Coelho</a>
     </div>
     """, unsafe_allow_html=True)
 
