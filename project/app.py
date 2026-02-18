@@ -101,7 +101,7 @@ st.markdown(f"""
 # -----------------------------------------------------------------------
 with st.sidebar:
     st.markdown(f"### {L['sb_title']}")
-    cod           = st.text_input(L['ticker'], value="NVDA").upper()
+    cod           = st.text_input(L['ticker'], value="").upper()
     begin         = st.text_input(L['start'],  value="2020-01-01")
     end_date_str  = st.text_input(L['end'],    value="2026-01-01")
     dias_previsao = st.number_input(L['days'], min_value=30, max_value=730, value=365)
@@ -111,10 +111,9 @@ with st.sidebar:
     st.button(L['btn_lang'], on_click=toggle_lang)
 
     # ── CRÉDITO NO RODAPÉ DA SIDEBAR ──────────────────────────────
-    st.markdown("---")
     st.markdown(f"""
     <div class="dev-credit">
-        {L['dev_credit']} <a href="https://linktr.ee/danielcoelho" target="_blank">Daniel Coelho</a>
+        {L['dev_credit']} <a href="https://linktr.ee/deni.jpg" target="_blank">Daniel Coelho</a>
     </div>
     """, unsafe_allow_html=True)
 
@@ -128,11 +127,14 @@ if btn_treinar:
         with st.spinner(L['loading']):
             try:
                 # DADOS — igual ao main.py
-                dados = yf.download(cod, start=begin, end=end_date_str, multi_level_index=False)
+                dados = yf.download(cod, start=begin, end=end_date_str, progress=False)
 
                 if dados is None or dados.empty:
                     st.error(L['error'])
                 else:
+                    if isinstance(dados.columns, pd.MultiIndex):
+                        dados.columns = dados.columns.get_level_values(0)
+
                     dados = dados[["Close"]].reset_index()
                     dados.columns = ["ds", "y"]
 
