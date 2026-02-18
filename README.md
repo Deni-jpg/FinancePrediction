@@ -3,7 +3,8 @@
 
 This project utilizes the **NeuralProphet** library (built on PyTorch) to analyze historical stock data and generate price forecasts for the next **365 days**.
 
-![Finance Prediction Graph](Figure_1.png)
+![Finance Prediction Graph](/images/Figure_1.png)
+*(Nvidia 2020-2027 graph)*
 
 > [!IMPORTANT]
 >
@@ -60,7 +61,7 @@ git clone https://github.com/Deni-jpg/FinancePrediction.git
 Bash
 
 ```
-pip install neuralprophet yfinance pandas matplotlib scikit-learn
+pip install -r requirements.txt
 
 ```
 
