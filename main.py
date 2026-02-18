@@ -1,3 +1,6 @@
+## ANTIGO APP.PY, AGORA É MAIN.PY, PARA *TESTES LOCAIS*. O APP.PY VAI SER USADO PARA O STREAMLIT!!!
+## SE DESEJA APENAS FAZER TESTES USE ESTE ARQUIVO, SE DESEJA RODAR EM WEBAPP USE O APP.PY!!!
+
 import torch
 import torch.serialization
 # solução de erros do pytorch
@@ -24,7 +27,7 @@ from neuralprophet import NeuralProphet
 
 # váriaveis da empresa
 cod = "NVDA"
-begin = "2016-01-01"
+begin = "2020-01-01"
 end = "2026-01-01"
 arquivo_modelo = f"modelo_{cod}.pt"
 
