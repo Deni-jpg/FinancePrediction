@@ -3,6 +3,8 @@
 
 This project utilizes the **NeuralProphet** library (built on PyTorch) to analyze historical stock data and generate price forecasts for the next **365 days**.
 
+![Finance Prediction Graph](Figure_1.png)
+
 > [!IMPORTANT]
 >
 > **Educational Use Only:** This project is for educational purposes and should not be used as professional financial advice.
